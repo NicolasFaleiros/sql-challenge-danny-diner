@@ -1,35 +1,22 @@
 # 🍜 Case Study 1 - Danny's Diner
 
-<hr style="border:1px solid indianred">
 
-![Pasted image 20230404183325](https://github.com/NicolasFaleiros/sql-challenge-danny-diner/assets/41973874/c33494c8-8f14-413e-b2e8-91bda6f268a3)
+![1_resized (1)](https://github.com/NicolasFaleiros/sql-challenge-danny-diner/assets/41973874/bd0866be-7ecc-434c-9bbf-4777be5f1649)
+
+# 📚 Table of Contents
 
 
-## 📚 Table of Contents
-
-<hr style="border:1px solid indianred">
-
-* 
-
-<hr style="border:2px solid indianred">
-
-## 🧠 Business Task
-
-<hr style="border:1px solid indianred">
+# 🧠 Business Problem
 
 Danny loves Japanese food and he opened up a restaurant that sells 3 of his **favorite** foods: **sushi**, **ramen** and **curry**.
 
 His restaurant captured some data from his first months of operation, but have no idea how to analyse it and turn it into useful information that will help the business. They need our assistance to help the restaurant stay afloat.
 
-## 🔎 Entity Relationship Diagram
+# 🔎 Entity Relationship Diagram
 
-<hr style="border:1px solid indianred">
+![Pasted image 20230404185248](https://github.com/NicolasFaleiros/sql-challenge-danny-diner/assets/41973874/07619140-2911-4338-8049-cb57ea947418)
 
-![[Pasted image 20230404185248.png]]
-
-## 📋 Case Study Questions
-
-<hr style="border:1px solid indianred">
+# 📋 Case Study Questions
 
 1.  What is the total amount each customer spent at the restaurant?
 2.  How many days has each customer visited the restaurant?
@@ -42,15 +29,9 @@ His restaurant captured some data from his first months of operation, but have n
 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 10.  In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 
-<hr style="border:2px solid indianred">
-
 # Solution
 
-<hr style="border:1px solid indianred">
-
 View the complete SQL code here. Note that for this project I've expanded the original sample data provided by the author. As a result we now have a little bit over **900** orders in the `sales` table and **50** clients in the `members` table.
-
-<hr style="border:2px solid indianred">
 
 ### 1. What is the total amount each customer spent at the restaurant?
 
@@ -119,8 +100,6 @@ ORDER BY customer_id;
 | 49          | 66          |
 | 50          | 896         |
 
-<hr style="border:2px solid indianred">
-
 ### 2.  How many days has each customer visited the restaurant?
 
 ```sql
@@ -184,8 +163,6 @@ GROUP BY customer_id;
 | 48          | 42          |
 | 49          | 24          |
 | 50          | 34          |
-
-<hr style="border:2px solid indianred">
 
 ### 3. What was the first item from the menu purchased by each customer?
 
