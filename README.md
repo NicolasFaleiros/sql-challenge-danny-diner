@@ -33,7 +33,7 @@ His restaurant captured some data from his first months of operation, but have n
 
 View the complete SQL code [here](https://github.com/NicolasFaleiros/sql-challenge-danny-diner/blob/main/query.sql). 
 
-[comment]: <> (Note that for this project I've expanded the original sample data provided by the author. As a result we now have a little bit over **900** orders in the `sales` table and **50** clients in the `members` table.)
+[comment]: <> (Note that for this project I've expanded the original sample data provided by the author. As a result we now have a little bit over **900** orders in the `sales` table and **50** clients in the `members` table)
 
 <hr style="border:2px solid indianred">
 
