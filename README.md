@@ -31,7 +31,11 @@ His restaurant captured some data from his first months of operation, but have n
 
 # Solution
 
-View the complete SQL code here. Note that for this project I've expanded the original sample data provided by the author. As a result we now have a little bit over **900** orders in the `sales` table and **50** clients in the `members` table.
+View the complete SQL code [here](https://github.com/NicolasFaleiros/sql-challenge-danny-diner/blob/main/query.sql). 
+
+[comment]: <> (Note that for this project I've expanded the original sample data provided by the author. As a result we now have a little bit over **900** orders in the `sales` table and **50** clients in the `members` table.)
+
+<hr style="border:2px solid indianred">
 
 ### 1. What is the total amount each customer spent at the restaurant?
 
@@ -49,56 +53,11 @@ ORDER BY customer_id;
 
 | customer_id | total_sales |
 |-------------|-------------|
-| 1           | 2018        |
-| 2           | 1636        |
-| 3           | 1246        |
-| 4           | 1262        |
-| 5           | 1312        |
-| 6           | 11          |
-| 7           | 156         |
-| 8           | 1594        |
-| 9           | 1554        |
-| 10          | 1552        |
-| 11          | 648         |
-| 12          | 846         |
-| 13          | 79          |
-| 14          | 58          |
-| 15          | 996         |
-| 16          | 982         |
-| 17          | 764         |
-| 18          | 866         |
-| 19          | 624         |
-| 20          | 728         |
-| 21          | 82          |
-| 22          | 734         |
-| 23          | 876         |
-| 24          | 968         |
-| 25          | 792         |
-| 26          | 712         |
-| 27          | 808         |
-| 28          | 85          |
-| 29          | 368         |
-| 30          | 658         |
-| 31          | 964         |
-| 32          | 8           |
-| 33          | 868         |
-| 34          | 784         |
-| 35          | 1192        |
-| 36          | 878         |
-| 37          | 1014        |
-| 38          | 854         |
-| 39          | 121         |
-| 40          | 908         |
-| 41          | 908         |
-| 42          | 658         |
-| 43          | 832         |
-| 44          | 762         |
-| 45          | 558         |
-| 46          | 608         |
-| 47          | 65          |
-| 48          | 1064        |
-| 49          | 66          |
-| 50          | 896         |
+| A           | 76          |
+| B           | 74          |
+| C           | 36          |
+
+<hr style="border:2px solid indianred">
 
 ### 2.  How many days has each customer visited the restaurant?
 
@@ -113,56 +72,11 @@ GROUP BY customer_id;
 
 | customer_id | visit_count |
 |-------------|-------------|
-| 1           | 67          |
-| 2           | 54          |
-| 3           | 42          |
-| 4           | 5           |
-| 5           | 49          |
-| 6           | 45          |
-| 7           | 6           |
-| 8           | 61          |
-| 9           | 58          |
-| 10          | 57          |
-| 11          | 27          |
-| 12          | 34          |
-| 13          | 32          |
-| 14          | 22          |
-| 15          | 39          |
-| 16          | 38          |
-| 17          | 3           |
-| 18          | 36          |
-| 19          | 25          |
-| 20          | 28          |
-| 21          | 34          |
-| 22          | 31          |
-| 23          | 31          |
-| 24          | 36          |
-| 25          | 32          |
-| 26          | 27          |
-| 27          | 3           |
-| 28          | 34          |
-| 29          | 16          |
-| 30          | 24          |
-| 31          | 38          |
-| 32          | 32          |
-| 33          | 33          |
-| 34          | 31          |
-| 35          | 44          |
-| 36          | 35          |
-| 37          | 4           |
-| 38          | 34          |
-| 39          | 47          |
-| 40          | 32          |
-| 41          | 36          |
-| 42          | 26          |
-| 43          | 34          |
-| 44          | 29          |
-| 45          | 22          |
-| 46          | 25          |
-| 47          | 25          |
-| 48          | 42          |
-| 49          | 24          |
-| 50          | 34          |
+| A           | 4           |
+| B           | 6           |
+| C           | 2           |
+
+<hr style="border:2px solid indianred">
 
 ### 3. What was the first item from the menu purchased by each customer?
 
@@ -182,61 +96,53 @@ FROM sales_cte
 WHERE rankk = 1
 GROUP BY customer_id, product_name;
 ```
+- To retrieve the product associated with the clients first purchase we rank all their purchases by order date and pick the first one (first order).
+- In terms of SQL, the way we do this ranking is using the `DENSE_RANK()` function.
 
 | customer_id | product_name |
 |-------------|--------------|
-| 1           | sushi        |
-| 1           | curry        |
-| 1           | ramen        |
-| 2           | curry        |
-| 3           | ramen        |
-| 4           | sushi        |
-| 5           | ramen        |
-| 6           | sushi        |
-| 7           | sushi        |
-| 8           | curry        |
-| 9           | curry        |
-| 10          | curry        |
-| 11          | curry        |
-| 12          | curry        |
-| 13          | ramen        |
-| 14          | sushi        |
-| 15          | sushi        |
-| 16          | curry        |
-| 17          | sushi        |
-| 18          | ramen        |
-| 19          | ramen        |
-| 20          | sushi        |
-| 21          | ramen        |
-| 22          | ramen        |
-| 23          | ramen        |
-| 24          | ramen        |
-| 25          | curry        |
-| 26          | ramen        |
-| 27          | curry        |
-| 28          | curry        |
-| 29          | sushi        |
-| 30          | ramen        |
-| 31          | curry        |
-| 32          | sushi        |
-| 33          | sushi        |
-| 34          | sushi        |
-| 35          | ramen        |
-| 36          | sushi        |
-| 37          | ramen        |
-| 38          | ramen        |
-| 39          | ramen        |
-| 40          | ramen        |
-| 41          | ramen        |
-| 42          | ramen        |
-| 43          | ramen        |
-| 44          | curry        |
-| 45          | curry        |
-| 46          | curry        |
-| 47          | sushi        |
-| 48          | sushi        |
-| 49          | curry        |
-| 50          | sushi        |
+| A           | curry        |
+| A           | sushi        |
+| B           | curry        |
+| C           | ramen        |
+
+- The reason that we have two products for some customers is that they might have ordered more than one product at their first purchase. 
+- In the context of our database, as we have only the day of the purchase, and not the exact hour or minute, the customer might have ordered multiple products at the same purchase, or multiple orders in the same day.
+
+```sql
+WITH ordered_sales_cte_ranked AS
+(
+   SELECT s.customer_id, s.order_date, m.product_name,
+      DENSE_RANK() OVER(PARTITION BY s.customer_id
+      ORDER BY s.order_date) AS rankk
+   FROM sales s
+   JOIN menu m
+      ON s.product_id = m.product_id
+)
+SELECT customer_id, product_name, order_date, rankk
+FROM ordered_sales_cte_ranked
+ORDER BY customer_id, order_date;
+```
+
+| customer_id | product_name | order_date | rankk |
+|-------------|--------------|------------|-------|
+| A           | curry        | 2021-01-01 | 1     |
+| A           | sushi        | 2021-01-01 | 1     |
+| A           | curry        | 2021-01-07 | 2     |
+| A           | ramen        | 2021-01-10 | 3     |
+| A           | ramen        | 2021-01-11 | 4     |
+| A           | ramen        | 2021-01-11 | 4     |
+| B           | curry        | 2021-01-01 | 1     |
+| B           | curry        | 2021-01-02 | 2     |
+| B           | sushi        | 2021-01-04 | 3     |
+| B           | sushi        | 2021-01-11 | 4     |
+| B           | ramen        | 2021-01-16 | 5     |
+| B           | ramen        | 2021-02-01 | 6     |
+| C           | ramen        | 2021-01-01 | 1     |
+| C           | ramen        | 2021-01-01 | 1     |
+| C           | ramen        | 2021-01-07 | 2     |
+
+
 
 <hr style="border:2px solid indianred">
 
