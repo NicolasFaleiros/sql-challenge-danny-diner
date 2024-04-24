@@ -34,8 +34,8 @@ WITH ordered_sales_cte AS
    SELECT customer_id, order_date, product_name,
       DENSE_RANK() OVER(PARTITION BY s.customer_id
       ORDER BY s.order_date) AS rankk
-   FROM sales AS s
-   JOIN menu AS m
+   FROM sales s
+   JOIN menu m
       ON s.product_id = m.product_id
 )
 SELECT customer_id, product_name
